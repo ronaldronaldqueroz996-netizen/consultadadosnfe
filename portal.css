@@ -1,0 +1,93 @@
+:root {
+  --portal-bg: #f0f7ff;
+  --portal-surface: #fff;
+  --portal-soft: #e4f2ff;
+  --portal-hover: #ccecff;
+  --portal-text: #142e4d;
+  --portal-muted: #285984;
+  --portal-field-border: #9ac9ed;
+  --portal-caption: #000;
+  --portal-border: #0080D3;
+  --portal-title: #0080D3;
+  --portal-button: #0149AF;
+  --portal-secondary: #00B2E2;
+  color-scheme: light;
+}
+[data-testid="stAppViewContainer"], [data-testid="stHeader"] { background: var(--portal-bg); color: var(--portal-text); }
+.stMainBlockContainer, [data-testid="stMainBlockContainer"] { max-width: 1180px; margin-inline: auto; padding: 4.5rem 1.5rem 2rem; }
+.portal-header { display: flex; align-items: center; gap: 28px; padding: 18px; border: 1px solid var(--portal-field-border); border-left: 5px solid var(--portal-button); border-bottom: 3px solid var(--portal-secondary); border-radius: 10px; background: var(--portal-surface); margin-bottom: 8px; font-family: Arial, sans-serif; }
+.portal-header h1 { color: var(--portal-title); font-size: 25px; padding: 0; font-weight: 600; }
+.portal-header p { color: var(--portal-muted); font-size: 13px; margin: 6px 0 12px; }
+[data-testid="stFileUploader"] { color: var(--portal-text); }
+[data-testid="stFileUploader"] svg:not(button svg) { color: var(--portal-button); background: #fff; }
+[data-testid="stFileUploader"] div:has(> svg:not(button svg)) { background: #fff; }
+[data-testid="stFileUploader"] section { background: var(--portal-soft); color: var(--portal-text); border: 1px dashed var(--portal-border); }
+[data-testid="stFileUploader"] button, [data-testid="stBaseButton-primary"] { background: var(--portal-button); color: #fff; border: 1px solid var(--portal-button); border-radius: 6px; }
+[data-testid="stFileUploader"] button:hover, [data-testid="stBaseButton-primary"]:hover { background: #003c91; color: #fff; border-color: #003c91; }
+[data-testid="stFileUploader"] [data-testid="stTooltipIcon"] button,
+[data-testid="stFileUploader"] [data-testid="stTooltipIcon"] button:hover { background: #fff; color: var(--portal-button); border-color: #fff; }
+[data-testid="stFileUploader"] [data-testid="stTooltipIcon"] svg { fill: none; color: var(--portal-button); }
+[data-testid="stBaseButton-secondary"]:not([data-testid="stFileUploader"] button) { background: var(--portal-secondary); color: #082b46; border-color: var(--portal-secondary); }
+[data-testid="stBaseButton-secondary"]:not([data-testid="stFileUploader"] button):hover { background: #009cc7; color: #082b46; border-color: #009cc7; }
+[data-testid="stFileUploader"] button:focus-visible, .stTabs [role="tab"]:focus-visible { outline: 3px solid var(--portal-secondary); outline-offset: 3px; }
+.portal-logo { background: #fff; border-radius: 6px; display: block; width: 200px; height: 124px; object-fit: cover; flex-shrink: 0; }
+.portal-heading { min-width: 0; }
+.stTabs [data-baseweb="tab-highlight"] { background-color: var(--portal-title); }
+[data-testid="stFileUploader"] small, [data-testid="stFileUploader"] label { color: var(--portal-muted); }
+.stTabs [role="tablist"] { display: flex; justify-content: safe center; gap: 0; border-bottom: 1px solid var(--portal-border); }
+.stTabs [role="tab"] { color: var(--portal-text); background: var(--portal-soft); border: 1px solid var(--portal-border); border-bottom: 0; padding: 6px 10px; height: auto; min-height: 35px; border-radius: 0; white-space: nowrap; }
+.stTabs [role="tab"] p { font-family: Arial, sans-serif; font-size: 13px; }
+.stTabs [role="tab"]:hover { background: var(--portal-hover); }
+.stTabs [role="tab"][aria-selected="true"], .stTabs [role="tab"][data-selected] { color: #fff; font-weight: 700; background: var(--portal-button); border-color: var(--portal-button); box-shadow: inset 0 -3px var(--portal-secondary); }
+.stTabs [role="tab"] .react-aria-SelectionIndicator { display: none; }
+.stTabs [role="tabpanel"] { border: 1px solid var(--portal-field-border); border-top: 0; padding: 16px 10px 10px; background: var(--portal-surface); }
+.portal { color: var(--portal-text); font: 13px Arial, sans-serif; text-align: left; line-height: 1.3; }
+.portal h2, .portal h3, .portal h4 { color: var(--portal-title); font: 600 15px Arial, sans-serif; margin: 18px 0 10px; padding: 0; letter-spacing: .15px; }
+.portal h2:first-child { margin-top: 6px; }
+.portal h4 { font-size: 13px; }
+.portal .field-grid { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 7px 6px; padding: 6px; border: 1px solid var(--portal-field-border); border-radius: 5px; background: var(--portal-soft); margin-bottom: 10px; }
+.portal .field { min-width: 0; grid-column: span var(--span, 1); display: flex; flex-direction: column; }
+.portal .label { color: var(--portal-muted); font-size: 12px; margin: 0 0 3px 2px; overflow-wrap: anywhere; }
+.portal .value { min-height: 26px; box-sizing: border-box; padding: 4px 6px; border: 1px solid var(--portal-field-border); background: var(--portal-surface); color: var(--portal-text); overflow-wrap: anywhere; white-space: pre-wrap; margin-top: auto; }
+.portal .general-grid { grid-template-columns: minmax(0, 7fr) minmax(65px, 1fr) minmax(75px, 1fr); }
+.portal .identification-grid { grid-template-columns: .55fr .55fr .85fr 2fr 1.8fr 1.7fr; }
+.portal .party-grid { grid-template-columns: 1.5fr 2.5fr 1.3fr .45fr; }
+.portal .empty { color: var(--portal-muted); padding: 10px; background: var(--portal-soft); border: 1px solid var(--portal-field-border); }
+.portal .table-wrap { overflow-x: auto; border: 1px solid var(--portal-border); padding: 4px; margin-bottom: 12px; }
+.portal table { width: 100%; border-collapse: separate; border-spacing: 4px; font: inherit; margin: 0; }
+.portal th { font-size: 12px; color: var(--portal-muted); font-weight: 400; text-align: left; padding: 3px; border: 0; }
+.portal td { vertical-align: top; border: 1px solid var(--portal-field-border); padding: 5px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.portal .product-head, .portal .product-summary { display: grid; grid-template-columns: 36px minmax(0, 1fr) 100px 115px 110px; gap: 5px; align-items: start; }
+.portal .product-head { padding: 6px; border: 1px solid var(--portal-border); color: var(--portal-muted); font-size: 12px; }
+.portal .product { border: 1px solid var(--portal-border); margin-top: 5px; }
+.portal .product summary { cursor: pointer; padding: 5px; list-style: none; background: var(--portal-soft); }
+.portal .product summary::-webkit-details-marker { display: none; }
+.portal .product summary:hover { background: var(--portal-hover); }
+.portal .product summary:focus-visible { outline: 2px solid #0080D3; outline-offset: 2px; }
+.portal .product-summary > span { padding: 4px; border: 1px solid var(--portal-field-border); background: var(--portal-surface); min-height: 27px; box-sizing: border-box; overflow-wrap: anywhere; }
+.portal .product-summary > span:first-child::before { content: '+ '; color: #0080D3; }
+.portal .product[open] .product-summary > span:first-child::before { content: '− '; }
+.portal .product-body { padding: 8px; }
+.portal .subgroup { border-left: 2px solid var(--portal-secondary); padding-left: 8px; margin: 8px 0; }
+[data-testid="stCaptionContainer"] { color: var(--portal-caption); opacity: 1; }
+@media (max-width: 700px) {
+  .portal-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .portal-logo { width: 170px; height: 106px; }
+  .stMainBlockContainer, [data-testid="stMainBlockContainer"] { padding: 4rem .6rem 1rem; }
+  .portal .field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portal .field { grid-column: span 1; }
+  .portal .field[style*="--span"] { grid-column: 1 / -1; }
+  .portal .general-grid { grid-template-columns: 1fr 1fr; }
+  .portal .general-grid .field:first-child { grid-column: 1 / -1; }
+  .portal .product-head { display: none; }
+  .portal .product-summary { grid-template-columns: 35px minmax(0, 1fr); }
+  .portal .product-summary > span:nth-child(n+3) { grid-column: 2; }
+  .portal .product-summary > span:nth-child(3)::before { content: 'Qtd.: '; }
+  .portal .product-summary > span:nth-child(4)::before { content: 'Unidade: '; }
+  .portal .product-summary > span:nth-child(5)::before { content: 'Valor (R$): '; }
+}
+
+[data-testid="stApp"] { background: var(--portal-bg); color: var(--portal-text); }
+[data-testid="stFileUploader"] li { color: var(--portal-text); }
+[data-testid="stAlert"] { background: var(--portal-soft); color: var(--portal-text); }
+[data-testid="stAlert"] [data-testid="stMarkdownContainer"] { color: var(--portal-text); }
